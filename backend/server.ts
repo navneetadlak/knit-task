@@ -6,7 +6,6 @@ import authRoutes from './routes/auth';
 import taskRoutes from './routes/task';
 
 dotenv.config();
-
 const app = express();
 
 // middleware
@@ -21,8 +20,8 @@ app.get('/api/health', (req, res) => {
     res.status(200).json({ message: 'Server is running!' });
 });
 
-// mongoDB connection
-const MONGODB_URI = 'mongodb://localhost:27017/taskmanager';
+// mongoDB connection string i am use it in code so you can run it on local without my .env file
+const MONGODB_URI = 'mongodb+srv://navneet:3X16ZwoyXVvOlQZq@namastenode.vdnel.mongodb.net/';
 
 mongoose.connect(MONGODB_URI)
     .then(() => {

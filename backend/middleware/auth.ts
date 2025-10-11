@@ -6,6 +6,8 @@ export interface AuthRequest extends Request {
     user?: IUser;
 }
 
+const JWT_SECRET = '0222f4ea8f86a0971b7c90dce25df9608bb2d4baf87848be4d65c266fbc4591f';
+
 export const authenticateToken = async (
     req: AuthRequest,
     res: Response,
