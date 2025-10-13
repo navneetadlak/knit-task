@@ -29,7 +29,7 @@ const Dashboard: React.FC = () => {
     }
   };
 
-  const filteredTasks = tasks.filter(task => 
+  const filteredTasks = tasks.filter(task =>
     filter === 'all' ? true : task.status === filter
   );
 
@@ -50,7 +50,7 @@ const Dashboard: React.FC = () => {
         {/* Sidebar */}
         <div className="lg:col-span-1">
           <TaskForm onSubmit={handleCreateTask} isLoading={isLoading} />
-          
+
           {/* Stats */}
           <div className="mt-6 bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-lg font-semibold mb-4">Task Statistics</h3>
@@ -80,7 +80,7 @@ const Dashboard: React.FC = () => {
           <div className="bg-white p-6 rounded-lg shadow-md mb-6">
             <div className="flex justify-between items-center mb-4">
               <h1 className="text-2xl font-bold text-gray-900">Your Tasks</h1>
-              
+
               {/* Filter */}
               <select
                 value={filter}
