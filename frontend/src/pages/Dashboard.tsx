@@ -19,7 +19,7 @@ const Dashboard: React.FC = () => {
       return;
     }
     fetchTasks();
-  }, [user, navigate, fetchTasks]);
+  }, [user]);
 
   const handleCreateTask = async (taskData: TaskFormData) => {
     try {

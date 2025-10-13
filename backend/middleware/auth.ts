@@ -22,7 +22,7 @@ export const authenticateToken = async (
             return;
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string };
+        const decoded = jwt.verify(token, JWT_SECRET!) as { userId: string };
         const user = await User.findById(decoded.userId).select('-password');
 
         if (!user) {
@@ -38,5 +38,5 @@ export const authenticateToken = async (
 };
 
 export const generateToken = (userId: string): string => {
-    return jwt.sign({ userId }, process.env.JWT_SECRET!, { expiresIn: '7d' });
+    return jwt.sign({ userId }, JWT_SECRET!, { expiresIn: '7d' });
 };
